@@ -1,0 +1,8 @@
+C:\Users\Rachel\Documents\School Work\CPSC 475\Project2_Intents-master\P2_skel\P2_skel\project2_Solution_color\build\intermediates\classes\debug
+C:\Users\Rachel\Documents\School Work\CPSC 475\Project2_Intents-master\P2_skel\P2_skel\project2_Solution_color\build\intermediates\pre-dexed\debug\support-annotations-23.4.0-9787d8a0c2a9f1629d4204c02a202039e82fd04b.jar
+C:\Users\Rachel\Documents\School Work\CPSC 475\Project2_Intents-master\P2_skel\P2_skel\project2_Solution_color\build\intermediates\pre-dexed\debug\classes-8864dda74a0441d0b69dfd33d62abb854a9f5729.jar
+C:\Users\Rachel\Documents\School Work\CPSC 475\Project2_Intents-master\P2_skel\P2_skel\project2_Solution_color\build\intermediates\pre-dexed\debug\classes-88a0043457d2af9ea2e790bb0e30b0aab01115bc.jar
+C:\Users\Rachel\Documents\School Work\CPSC 475\Project2_Intents-master\P2_skel\P2_skel\project2_Solution_color\build\intermediates\pre-dexed\debug\classes-bc6e208df175434cf41c1a223cfa4b370d49bc10.jar
+C:\Users\Rachel\Documents\School Work\CPSC 475\Project2_Intents-master\P2_skel\P2_skel\project2_Solution_color\build\intermediates\pre-dexed\debug\internal_impl-23.4.0-36f0f7842036ff3b752a56a3bd0ab866fa0cc6b8.jar
+C:\Users\Rachel\Documents\School Work\CPSC 475\Project2_Intents-master\P2_skel\P2_skel\project2_Solution_color\build\intermediates\pre-dexed\debug\classes-ef1d61d717d0e3257c8932417db19aaa20bb6ce3.jar
+C:\Users\Rachel\Documents\School Work\CPSC 475\Project2_Intents-master\P2_skel\P2_skel\project2_Solution_color\build\intermediates\pre-dexed\debug\classes-bcb2c5ba2ce450277f667c7595c2def6f0855790.jar

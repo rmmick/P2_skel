@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <paths xmlns:android="http://schemas.android.com/apk/res/android">
+        <external-path name="my_images" path="Android/data/com.example.solution_color/files/Pictures" />
+    </paths>
+
+</PreferenceScreen><!-- From: file:/C:/Users/Rachel/Documents/School%20Work/CPSC%20475/Project2_Intents-master/P2_skel/P2_skel/project2_Solution_color/src/main/res/xml/file_paths.xml -->

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/P2_skel.iml" filepath="$PROJECT_DIR$/P2_skel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bitmap_utilities/bitmap_utilities.iml" filepath="$PROJECT_DIR$/bitmap_utilities/bitmap_utilities.iml" />
+      <module fileurl="file://$PROJECT_DIR$/project2_Solution_color/project2_Solution_color.iml" filepath="$PROJECT_DIR$/project2_Solution_color/project2_Solution_color.iml" />
+    </modules>
+  </component>
+</project>

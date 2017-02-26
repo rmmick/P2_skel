@@ -1,0 +1,43 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:title="Reset"
+        android:id="@+id/reset"
+        android:icon="@android:drawable/ic_menu_revert"
+        android:orderInCategory="1"
+        android:visible="true"
+        app:showAsAction="always"/>
+
+    <item
+        android:title="BW"
+        android:id="@+id/bw"
+        android:icon="@android:drawable/ic_menu_edit"
+        android:orderInCategory="1"
+        android:visible="true"
+        app:showAsAction="always"/>
+
+    <item
+        android:title="Colorize"
+        android:id="@+id/color"
+        android:icon="@android:drawable/ic_menu_view"
+        android:orderInCategory="1"
+        android:visible="true"
+        app:showAsAction="always"/>
+
+    <item
+        android:title="Share"
+        android:id="@+id/share"
+        android:icon="@android:drawable/ic_menu_share"
+        android:orderInCategory="300"
+        android:visible="true"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/settings"
+        android:orderInCategory="400"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+
+</menu>
+<!-- From: file:/C:/Users/Rachel/Documents/School%20Work/CPSC%20475/Project2_Intents-master/P2_skel/P2_skel/project2_Solution_color/src/main/res/menu/main.xml -->

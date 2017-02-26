@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\Rachel\Documents\School Work\CPSC 475\Project2_Intents-master\P2_skel\P2_skel\project2_Solution_color\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="C:\Users\Rachel\Documents\School Work\CPSC 475\Project2_Intents-master\P2_skel\P2_skel\project2_Solution_color\build\intermediates\pre-dexed\debug\classes-ef1d61d717d0e3257c8932417db19aaa20bb6ce3.jar" />
+    </item>
+    <item
+        jar="C:\Users\Rachel\Documents\School Work\CPSC 475\Project2_Intents-master\P2_skel\P2_skel\project2_Solution_color\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="C:\Users\Rachel\Documents\School Work\CPSC 475\Project2_Intents-master\P2_skel\P2_skel\project2_Solution_color\build\intermediates\pre-dexed\debug\classes-bc6e208df175434cf41c1a223cfa4b370d49bc10.jar" />
+    </item>
+    <item
+        jar="C:\Users\Rachel\Documents\School Work\CPSC 475\Project2_Intents-master\P2_skel\P2_skel\project2_Solution_color\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.4.0\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="C:\Users\Rachel\Documents\School Work\CPSC 475\Project2_Intents-master\P2_skel\P2_skel\project2_Solution_color\build\intermediates\pre-dexed\debug\classes-88a0043457d2af9ea2e790bb0e30b0aab01115bc.jar" />
+    </item>
+    <item
+        jar="C:\Users\Rachel\Documents\School Work\CPSC 475\Project2_Intents-master\P2_skel\P2_skel\project2_Solution_color\build\intermediates\exploded-aar\P2_skel\bitmap_utilities\unspecified\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="83a8ef9e97aed45291a5d2ea800cc993f759793f">
+        <dex dex="C:\Users\Rachel\Documents\School Work\CPSC 475\Project2_Intents-master\P2_skel\P2_skel\project2_Solution_color\build\intermediates\pre-dexed\debug\classes-8864dda74a0441d0b69dfd33d62abb854a9f5729.jar" />
+    </item>
+    <item
+        jar="C:\Users\Rachel\Documents\School Work\CPSC 475\Project2_Intents-master\P2_skel\P2_skel\project2_Solution_color\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="C:\Users\Rachel\Documents\School Work\CPSC 475\Project2_Intents-master\P2_skel\P2_skel\project2_Solution_color\build\intermediates\pre-dexed\debug\classes-bcb2c5ba2ce450277f667c7595c2def6f0855790.jar" />
+    </item>
+    <item
+        jar="C:\Users\Rachel\Documents\School Work\CPSC 475\Project2_Intents-master\P2_skel\P2_skel\project2_Solution_color\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\libs\internal_impl-23.4.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="C:\Users\Rachel\Documents\School Work\CPSC 475\Project2_Intents-master\P2_skel\P2_skel\project2_Solution_color\build\intermediates\pre-dexed\debug\internal_impl-23.4.0-36f0f7842036ff3b752a56a3bd0ab866fa0cc6b8.jar" />
+    </item>
+    <item
+        jar="C:\Users\Rachel\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.4.0\support-annotations-23.4.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="C:\Users\Rachel\Documents\School Work\CPSC 475\Project2_Intents-master\P2_skel\P2_skel\project2_Solution_color\build\intermediates\pre-dexed\debug\support-annotations-23.4.0-9787d8a0c2a9f1629d4204c02a202039e82fd04b.jar" />
+    </item>
+
+</items>
