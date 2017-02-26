@@ -1638,7 +1638,7 @@ containing a value of this type.
         public static final int beginning=0x7f090019;
         public static final int buttonPanel=0x7f09002b;
         public static final int bw=0x7f090066;
-        public static final int camera_pic=0x7f090052;
+        public static final int camera_pic=0x7f090050;
         public static final int cancel_action=0x7f090054;
         public static final int checkbox=0x7f090039;
         public static final int chronometer=0x7f09005a;
@@ -1660,7 +1660,7 @@ containing a value of this type.
         public static final int icon=0x7f090029;
         public static final int ifRoom=0x7f09001e;
         public static final int image=0x7f090026;
-        public static final int imageView=0x7f090050;
+        public static final int imageView=0x7f090052;
         public static final int info=0x7f09005e;
         public static final int line1=0x7f090058;
         public static final int line3=0x7f09005c;

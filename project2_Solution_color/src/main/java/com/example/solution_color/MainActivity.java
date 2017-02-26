@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity  {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         image = (ImageView) findViewById(R.id.camera_pic);
+        image.setScaleType(ImageView.ScaleType.FIT_XY);
     }
 
     @Override
@@ -87,6 +88,8 @@ public class MainActivity extends AppCompatActivity  {
 
     private void doReset() {
         image.setImageResource(R.drawable.gutters);
+        image.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        image.setScaleType(ImageView.ScaleType.FIT_XY);
     }
 
     private File createImageFile() throws IOException {
