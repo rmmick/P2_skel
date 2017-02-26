@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity  {
     }
 
     private void doReset() {
-        Toast.makeText(this, "Reset goes here", Toast.LENGTH_SHORT).show();
+        image.setImageResource(R.drawable.gutters);
     }
 
     private File createImageFile() throws IOException {
