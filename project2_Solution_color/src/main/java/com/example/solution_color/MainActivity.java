@@ -27,7 +27,6 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity  {
 
-    private static final int REQUEST_IMAGE_CAPTURE = 1;
     static final int REQUEST_TAKE_PHOTO = 1;
     private Uri outputFileUri;
     String mCurrentPhotoPath;
@@ -40,6 +39,15 @@ public class MainActivity extends AppCompatActivity  {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         image = (ImageView) findViewById(R.id.camera_pic);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (requestCode) {
+            case (REQUEST_TAKE_PHOTO):
+                takepicture(resultCode);
+                break;
+        }
     }
 
     @Override
@@ -97,7 +105,7 @@ public class MainActivity extends AppCompatActivity  {
         return image;
     }
 
-    private void dispatchTakePictureIntent(View view) {
+    public void dispatchTakePictureIntent(View view) {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         // Ensure that there's a camera activity to handle the intent
         if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
@@ -119,7 +127,7 @@ public class MainActivity extends AppCompatActivity  {
         }
     }
 
-    private void setPic() {
+    public void setPic() {
         // Get the dimensions of the View
         int targetW = image.getWidth();
         int targetH = image.getHeight();
@@ -141,6 +149,16 @@ public class MainActivity extends AppCompatActivity  {
 
         Bitmap bitmap = BitmapFactory.decodeFile(mCurrentPhotoPath, bmOptions);
         image.setImageBitmap(bitmap);
+    }
+
+    private void takepicture(int resultCode) {
+        if (resultCode == RESULT_OK) {
+            setPic();
+
+            //lets get rid of the image so we dont hog memory
+            File file = new File(mCurrentPhotoPath);
+            boolean deleted = file.delete();
+        }
     }
 }
 
