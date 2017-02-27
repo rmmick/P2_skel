@@ -50,28 +50,46 @@ MERGED from com.android.support:support-v4:23.4.0:22:5
 		ADDED from AndroidManifest.xml:14:9
 	android:theme
 		ADDED from AndroidManifest.xml:16:9
-activity#com.example.solution_color.SettingsActivity
+provider#android.support.v4.content.FileProvider
 ADDED from AndroidManifest.xml:17:9
-	android:name
-		ADDED from AndroidManifest.xml:17:19
-activity#com.example.solution_color.MainActivity
-ADDED from AndroidManifest.xml:18:9
-	android:label
+MERGED from P2_skel:bitmap_utilities:unspecified:23:9
+	android:authorities
+		ADDED from AndroidManifest.xml:19:13
+	android:grantUriPermissions
 		ADDED from AndroidManifest.xml:21:13
-	android:configChanges
+	android:exported
 		ADDED from AndroidManifest.xml:20:13
 	android:name
-		ADDED from AndroidManifest.xml:19:13
+		ADDED from AndroidManifest.xml:18:13
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from AndroidManifest.xml:22:13
+MERGED from P2_skel:bitmap_utilities:unspecified:28:13
+	android:resource
+		ADDED from AndroidManifest.xml:24:17
+	android:name
+		ADDED from AndroidManifest.xml:23:17
+activity#com.example.solution_color.SettingsActivity
+ADDED from AndroidManifest.xml:26:9
+	android:name
+		ADDED from AndroidManifest.xml:26:19
+activity#com.example.solution_color.MainActivity
+ADDED from AndroidManifest.xml:27:9
+	android:label
+		ADDED from AndroidManifest.xml:30:13
+	android:configChanges
+		ADDED from AndroidManifest.xml:29:13
+	android:name
+		ADDED from AndroidManifest.xml:28:13
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from AndroidManifest.xml:28:13
+ADDED from AndroidManifest.xml:37:13
 action#android.intent.action.MAIN
-ADDED from AndroidManifest.xml:29:17
+ADDED from AndroidManifest.xml:38:17
 	android:name
-		ADDED from AndroidManifest.xml:29:25
+		ADDED from AndroidManifest.xml:38:25
 category#android.intent.category.LAUNCHER
-ADDED from AndroidManifest.xml:31:17
+ADDED from AndroidManifest.xml:40:17
 	android:name
-		ADDED from AndroidManifest.xml:31:27
+		ADDED from AndroidManifest.xml:40:27
 uses-sdk
 INJECTED from AndroidManifest.xml:0:0 reason: use-sdk injection requested
 MERGED from P2_skel:bitmap_utilities:unspecified:7:5
@@ -103,19 +121,3 @@ ADDED from P2_skel:bitmap_utilities:unspecified:14:5
 		ADDED from P2_skel:bitmap_utilities:unspecified:16:9
 	android:name
 		ADDED from P2_skel:bitmap_utilities:unspecified:15:9
-provider#android.support.v4.content.FileProvider
-ADDED from P2_skel:bitmap_utilities:unspecified:23:9
-	android:authorities
-		ADDED from P2_skel:bitmap_utilities:unspecified:25:13
-	android:grantUriPermissions
-		ADDED from P2_skel:bitmap_utilities:unspecified:27:13
-	android:exported
-		ADDED from P2_skel:bitmap_utilities:unspecified:26:13
-	android:name
-		ADDED from P2_skel:bitmap_utilities:unspecified:24:13
-meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from P2_skel:bitmap_utilities:unspecified:28:13
-	android:resource
-		ADDED from P2_skel:bitmap_utilities:unspecified:30:17
-	android:name
-		ADDED from P2_skel:bitmap_utilities:unspecified:29:17
