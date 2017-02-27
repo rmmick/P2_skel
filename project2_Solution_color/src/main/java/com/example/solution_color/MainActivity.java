@@ -63,12 +63,13 @@ public class MainActivity extends AppCompatActivity  {
                 return true;
 
             case R.id.sketch:
-                image.setImageBitmap(BitMap_Helpers.thresholdBmp(((BitmapDrawable)image.getDrawable()).getBitmap(), 5));
+                image.setImageBitmap(BitMap_Helpers.thresholdBmp(((BitmapDrawable)image.getDrawable()).getBitmap(), 10));
+                //image.setImageBitmap(BitMap_Helpers.colorBmp(((BitmapDrawable)image.getDrawable()).getBitmap(), 10));
                 return true;
 
             case R.id.color:
                 Bitmap bw = BitMap_Helpers.thresholdBmp(((BitmapDrawable)image.getDrawable()).getBitmap(), 5);
-                Bitmap colored = BitMap_Helpers.colorBmp(((BitmapDrawable)image.getDrawable()).getBitmap(), (float) 10.00);
+                Bitmap colored = BitMap_Helpers.colorBmp(((BitmapDrawable)image.getDrawable()).getBitmap(), 10);
                 BitMap_Helpers.merge(colored, bw);
                 image.setImageBitmap(bw);
                 //Toast.makeText(this, "Colorize goes here", Toast.LENGTH_SHORT).show();
