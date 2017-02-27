@@ -35,6 +35,8 @@ public class MainActivity extends AppCompatActivity  {
     private Uri photo;
     private String mCurrentPhotoPath;
     private ImageView image;
+    private String sub = "";
+    private String message = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +59,7 @@ public class MainActivity extends AppCompatActivity  {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.settings:
+                doSet();
                 Toast.makeText(this, "Settings goes here", Toast.LENGTH_SHORT).show();
                 return true;
 
@@ -66,12 +69,10 @@ public class MainActivity extends AppCompatActivity  {
 
             case R.id.share:
                 doSend();
-                //Toast.makeText(this, "Sharing goes here", Toast.LENGTH_SHORT).show();
                 return true;
 
             case R.id.sketch:
                 image.setImageBitmap(BitMap_Helpers.thresholdBmp(((BitmapDrawable)image.getDrawable()).getBitmap(), 10));
-                //image.setImageBitmap(BitMap_Helpers.colorBmp(((BitmapDrawable)image.getDrawable()).getBitmap(), 10));
                 return true;
 
             case R.id.color:
@@ -80,6 +81,7 @@ public class MainActivity extends AppCompatActivity  {
                 BitMap_Helpers.merge(colored, bw);
                 image.setImageBitmap(colored);
                 return true;
+
             default:
                 break;
         }
@@ -90,8 +92,10 @@ public class MainActivity extends AppCompatActivity  {
 
         if(photo != null) {
             Intent shareIntent = new Intent();
-            shareIntent.setAction(Intent.ACTION_SEND);
+            shareIntent.setAction(Intent.ACTION_SEND_MULTIPLE);
             shareIntent.putExtra(Intent.EXTRA_STREAM, photo);
+            shareIntent.putExtra(Intent.EXTRA_SUBJECT, sub);
+            shareIntent.putExtra(Intent.EXTRA_TEXT, message);
             shareIntent.setType("image/jpeg");
             startActivity(Intent.createChooser(shareIntent, "Share Image"));
         } else {
@@ -100,8 +104,9 @@ public class MainActivity extends AppCompatActivity  {
 
     }
 
-    private void doHelp() {
-        Toast.makeText(this, "Help goes here", Toast.LENGTH_SHORT).show();
+    private void doSet() {
+        Intent settings = new Intent(this, SettingsActivity.class);
+        startActivity(settings);
     }
 
     private void doReset() {
