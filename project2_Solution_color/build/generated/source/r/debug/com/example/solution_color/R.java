@@ -1637,7 +1637,6 @@ containing a value of this type.
         public static final int always=0x7f09001c;
         public static final int beginning=0x7f090019;
         public static final int buttonPanel=0x7f09002b;
-        public static final int bw=0x7f090066;
         public static final int camera_pic=0x7f090050;
         public static final int cancel_action=0x7f090054;
         public static final int checkbox=0x7f090039;
@@ -1703,6 +1702,7 @@ containing a value of this type.
         public static final int showCustom=0x7f09000f;
         public static final int showHome=0x7f090010;
         public static final int showTitle=0x7f090011;
+        public static final int sketch=0x7f090066;
         public static final int spacer=0x7f09002c;
         public static final int split_action_bar=0x7f090007;
         public static final int src_atop=0x7f090016;

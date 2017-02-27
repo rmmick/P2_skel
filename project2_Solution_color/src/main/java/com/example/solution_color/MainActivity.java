@@ -1,11 +1,8 @@
 package com.example.solution_color;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -19,11 +16,12 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.library.bitmap_utilities.BitMap_Helpers;
+
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity  {
 
@@ -43,15 +41,6 @@ public class MainActivity extends AppCompatActivity  {
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        switch (requestCode) {
-            case (REQUEST_TAKE_PHOTO):
-                takepicture(resultCode);
-                break;
-        }
-    }
-
-    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
@@ -64,17 +53,25 @@ public class MainActivity extends AppCompatActivity  {
             case R.id.settings:
                 Toast.makeText(this, "Settings goes here", Toast.LENGTH_SHORT).show();
                 return true;
+
             case R.id.reset:
                 doReset();
                 return true;
+
             case R.id.share:
                 Toast.makeText(this, "Sharing goes here", Toast.LENGTH_SHORT).show();
                 return true;
-            case R.id.bw:
-                Toast.makeText(this, "Black and White goes here", Toast.LENGTH_SHORT).show();
+
+            case R.id.sketch:
+                image.setImageBitmap(BitMap_Helpers.thresholdBmp(((BitmapDrawable)image.getDrawable()).getBitmap(), 5));
                 return true;
+
             case R.id.color:
-                Toast.makeText(this, "Colorize goes here", Toast.LENGTH_SHORT).show();
+                Bitmap bw = BitMap_Helpers.thresholdBmp(((BitmapDrawable)image.getDrawable()).getBitmap(), 5);
+                Bitmap colored = BitMap_Helpers.colorBmp(((BitmapDrawable)image.getDrawable()).getBitmap(), (float) 10.00);
+                BitMap_Helpers.merge(colored, bw);
+                image.setImageBitmap(bw);
+                //Toast.makeText(this, "Colorize goes here", Toast.LENGTH_SHORT).show();
                 return true;
             default:
                 break;
@@ -90,6 +87,7 @@ public class MainActivity extends AppCompatActivity  {
         image.setImageResource(R.drawable.gutters);
         image.setScaleType(ImageView.ScaleType.FIT_CENTER);
         image.setScaleType(ImageView.ScaleType.FIT_XY);
+        Camera_Helpers.delSavedImage(mCurrentPhotoPath);
     }
 
     private File createImageFile() throws IOException {
@@ -130,7 +128,31 @@ public class MainActivity extends AppCompatActivity  {
         }
     }
 
-    public void setPic() {
+    private void takepicture(int resultCode) {
+        if (resultCode == RESULT_OK) {
+            //setPic();
+            int targetW = image.getWidth();
+            int targetH = image.getHeight();
+            Bitmap bp = Camera_Helpers.loadAndScaleImage(mCurrentPhotoPath, targetW, targetH);
+            image.setImageBitmap(bp);
+            Camera_Helpers.saveProcessedImage(bp, mCurrentPhotoPath);
+
+            //lets get rid of the image so we dont hog memory
+            File file = new File(mCurrentPhotoPath);
+            boolean deleted = file.delete();
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (requestCode) {
+            case (REQUEST_TAKE_PHOTO):
+                takepicture(resultCode);
+                break;
+        }
+    }
+
+    /*public void setPic() {
         // Get the dimensions of the View
         int targetW = image.getWidth();
         int targetH = image.getHeight();
@@ -152,16 +174,6 @@ public class MainActivity extends AppCompatActivity  {
 
         Bitmap bitmap = BitmapFactory.decodeFile(mCurrentPhotoPath, bmOptions);
         image.setImageBitmap(bitmap);
-    }
-
-    private void takepicture(int resultCode) {
-        if (resultCode == RESULT_OK) {
-            setPic();
-
-            //lets get rid of the image so we dont hog memory
-            File file = new File(mCurrentPhotoPath);
-            boolean deleted = file.delete();
-        }
-    }
+    }*/
 }
 
