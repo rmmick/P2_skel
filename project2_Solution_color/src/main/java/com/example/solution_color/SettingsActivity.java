@@ -5,6 +5,7 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
+import android.widget.EditText;
 
 public class SettingsActivity extends Activity {
 	@Override
@@ -19,6 +20,7 @@ public class SettingsActivity extends Activity {
 		mFragmentTransaction.replace(android.R.id.content, mPrefsFragment);
 		mFragmentTransaction.commit();	    
 	  }
+
 	
 	public static class PrefsFragment extends PreferenceFragment {
 

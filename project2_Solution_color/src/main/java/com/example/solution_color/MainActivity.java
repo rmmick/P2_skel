@@ -15,6 +15,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -34,9 +35,12 @@ public class MainActivity extends AppCompatActivity  {
     private Uri photoURI = null;
     private Uri photo;
     private String mCurrentPhotoPath;
+    private Bitmap currBMP;
     private ImageView image;
-    private String sub = "";
+    public String sub = "";
     private String message = "";
+    EditText myText2;
+    EditText myText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +50,10 @@ public class MainActivity extends AppCompatActivity  {
         setSupportActionBar(toolbar);
         image = (ImageView) findViewById(R.id.camera_pic);
         image.setScaleType(ImageView.ScaleType.FIT_XY);
+
+        //setSubjectText();
+        //setShareText();
+
     }
 
     @Override
@@ -60,7 +68,6 @@ public class MainActivity extends AppCompatActivity  {
         switch (item.getItemId()) {
             case R.id.settings:
                 doSet();
-                Toast.makeText(this, "Settings goes here", Toast.LENGTH_SHORT).show();
                 return true;
 
             case R.id.reset:
@@ -72,13 +79,16 @@ public class MainActivity extends AppCompatActivity  {
                 return true;
 
             case R.id.sketch:
-                image.setImageBitmap(BitMap_Helpers.thresholdBmp(((BitmapDrawable)image.getDrawable()).getBitmap(), 10));
+                currBMP = BitMap_Helpers.thresholdBmp(((BitmapDrawable)image.getDrawable()).getBitmap(), 10);
+                image.setImageBitmap(currBMP);
+                photo = getImageUri(getApplicationContext(), currBMP);
                 return true;
 
             case R.id.color:
-                Bitmap bw = BitMap_Helpers.thresholdBmp(((BitmapDrawable)image.getDrawable()).getBitmap(), 5);
-                Bitmap colored = BitMap_Helpers.colorBmp(bw, 10);
-                BitMap_Helpers.merge(colored, bw);
+                Bitmap bw = BitMap_Helpers.thresholdBmp(((BitmapDrawable)image.getDrawable()).getBitmap(), 45);
+                Bitmap colored = BitMap_Helpers.colorBmp(currBMP, 120);
+                BitMap_Helpers.merge(bw, colored);
+                currBMP = colored;
                 image.setImageBitmap(colored);
                 return true;
 
@@ -88,11 +98,34 @@ public class MainActivity extends AppCompatActivity  {
         return true;
     }
 
+    /*
+    private void getShareText() {
+        myText = (EditText)findViewById(R.id.share_text);
+        message = myText.getText().toString();
+    }
+
+    private void setShareText() {
+        myText = (EditText)findViewById(R.id.share_text);
+        myText.setText("");
+    }
+
+    private void getSubjectText() {
+        myText2 = (EditText)findViewById(R.id.subject_text);
+        sub = myText2.getText().toString();
+    }
+
+    private void setSubjectText() {
+        myText2 = (EditText)findViewById(R.id.subject_text);
+        myText2.setText("");
+    }
+
+    */
+
     private void doSend() {
 
         if(photo != null) {
             Intent shareIntent = new Intent();
-            shareIntent.setAction(Intent.ACTION_SEND_MULTIPLE);
+            shareIntent.setAction(Intent.ACTION_SEND);
             shareIntent.putExtra(Intent.EXTRA_STREAM, photo);
             shareIntent.putExtra(Intent.EXTRA_SUBJECT, sub);
             shareIntent.putExtra(Intent.EXTRA_TEXT, message);
@@ -101,7 +134,6 @@ public class MainActivity extends AppCompatActivity  {
         } else {
             Toast.makeText(this, "No Photo Saved", Toast.LENGTH_SHORT).show();
         }
-
     }
 
     private void doSet() {
@@ -164,10 +196,10 @@ public class MainActivity extends AppCompatActivity  {
             //setPic();
             int targetW = image.getWidth();
             int targetH = image.getHeight();
-            Bitmap bp = Camera_Helpers.loadAndScaleImage(mCurrentPhotoPath, targetW, targetH);
-            photo = getImageUri(getApplicationContext(), bp);
-            image.setImageBitmap(bp);
-            Camera_Helpers.saveProcessedImage(bp, mCurrentPhotoPath);
+            currBMP = Camera_Helpers.loadAndScaleImage(mCurrentPhotoPath, targetW, targetH);
+            Camera_Helpers.saveProcessedImage(currBMP, mCurrentPhotoPath);
+            photo = getImageUri(getApplicationContext(), currBMP);
+            image.setImageBitmap(currBMP);
 
             //lets get rid of the image so we dont hog memory
             File file = new File(mCurrentPhotoPath);

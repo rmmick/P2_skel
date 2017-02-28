@@ -1,12 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
-    <EditTextPreference android:title="Your Name"
-        android:key="username"
-        android:summary="Please provide your username"></EditTextPreference>
-    <CheckBoxPreference android:title="Sample Checkbox Pref"
-        android:defaultValue="false"
-        android:summary="Longwinded explanation goes here"
-        android:key="applicationUpdates" />
+
+    <PreferenceCategory
+        android:title="Share Options"
+        android:key="pref_key_storage_settings">
+
+        <EditTextPreference
+            android:defaultValue=""
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="Share Subject"
+            android:key="edit_text_preference_1"
+            android:id="@+id/subject_text"
+            android:onClick="getShareText"/>
+
+        <EditTextPreference
+            android:defaultValue=""
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="Share Text"
+            android:key="edit_text_preference_2"
+            android:id="@+id/share_text"
+            android:onClick="getSubjectText"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Rendering Options"
+        android:key="pref_key_storage_settings">
+
+        <EditTextPreference
+            android:defaultValue="0"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="Sketchiness"
+            android:key="edit_text_preference_3" />
+
+        <EditTextPreference
+            android:defaultValue="0"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="Saturation"
+            android:key="edit_text_preference_4" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>
 <!-- From: file:/C:/Users/Rachel/Documents/School%20Work/CPSC%20475/Project2_Intents-master/P2_skel/P2_skel/project2_Solution_color/src/main/res/xml/preferences.xml -->

@@ -1,16 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <EditTextPreference
-        android:defaultValue="Default value"
-        android:selectAllOnFocus="true"
-        android:singleLine="true"
-        android:title="Share Subject"
-        android:key="edit_text_preference_1" />
-    <EditTextPreference
-        android:defaultValue="Default value"
-        android:selectAllOnFocus="true"
-        android:singleLine="true"
-        android:title="Share Text"
-        android:key="edit_text_preference_2" />
+    <PreferenceCategory
+        android:title="Share Options"
+        android:key="pref_key_storage_settings">
+
+        <EditTextPreference
+            android:defaultValue=""
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="Share Subject"
+            android:key="edit_text_preference_1"
+            android:id="@+id/subject_text"/>
+
+        <EditTextPreference
+            android:defaultValue=""
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="Share Text"
+            android:key="edit_text_preference_2"
+            android:id="@+id/share_text"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Rendering Options"
+        android:key="pref_key_storage_settings">
+
+        <EditTextPreference
+            android:defaultValue="0"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="Sketchiness"
+            android:key="edit_text_preference_3" />
+
+        <EditTextPreference
+            android:defaultValue="0"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="Saturation"
+            android:key="edit_text_preference_4" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>
