@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:robobunny="http://schemas.android.com/apk/res-auto">
 
     <PreferenceCategory
         android:title="Share Options"
@@ -10,16 +11,16 @@
             android:selectAllOnFocus="true"
             android:singleLine="true"
             android:title="Share Subject"
-            android:key="edit_text_preference_1"
-            android:id="@+id/subject_text"/>
+            android:summary="This is the subject of the message you would like to send"
+            android:key="subject_text"/>
 
         <EditTextPreference
             android:defaultValue=""
             android:selectAllOnFocus="true"
             android:singleLine="true"
             android:title="Share Text"
-            android:key="edit_text_preference_2"
-            android:id="@+id/share_text"/>
+            android:summary="This is the text you would like to share"
+            android:key="share_text"/>
 
     </PreferenceCategory>
 
@@ -32,14 +33,16 @@
             android:selectAllOnFocus="true"
             android:singleLine="true"
             android:title="Sketchiness"
-            android:key="edit_text_preference_3" />
+            android:summary="Set BW threshold; higher numbers correspond to less detail and a whiter image (0-99)"
+            android:key="sketchiness" />
 
         <EditTextPreference
             android:defaultValue="0"
             android:selectAllOnFocus="true"
             android:singleLine="true"
             android:title="Saturation"
-            android:key="edit_text_preference_4" />
+            android:summary="Set color saturation; higher numbers correspond to more colorful images (0.0 - 255.0)"
+            android:key="saturation" />
 
     </PreferenceCategory>
 
