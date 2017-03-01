@@ -33,7 +33,7 @@
             android:selectAllOnFocus="true"
             android:singleLine="true"
             android:title="Sketchiness"
-            android:summary="Set BW threshold; higher numbers correspond to less detail and a whiter image"
+            android:summary="Set BW threshold; higher numbers correspond to less detail and a whiter image (0-99)"
             android:key="sketchiness" />
 
         <EditTextPreference
@@ -41,7 +41,7 @@
             android:selectAllOnFocus="true"
             android:singleLine="true"
             android:title="Saturation"
-            android:summary="Set color saturation; higher numbers correspond to more colorful images"
+            android:summary="Set color saturation; higher numbers correspond to more colorful images (0.0 - 255.0)"
             android:key="saturation" />
 
     </PreferenceCategory>

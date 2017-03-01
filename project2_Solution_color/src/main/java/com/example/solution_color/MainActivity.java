@@ -38,7 +38,6 @@ import java.util.Date;
 
 public class MainActivity extends AppCompatActivity  {
 
-    static final int REQUEST_TAKE_PHOTO = 1;
     SharedPreferences SP;
     private Uri photoURI = null;
     private Uri photo;
@@ -176,7 +175,7 @@ public class MainActivity extends AppCompatActivity  {
                         "com.example.android.fileprovider",
                         photoFile);
                 takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
-                startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);
+                startActivityForResult(takePictureIntent, Constants.REQUEST_TAKE_PHOTO);
             }
         }
     }
@@ -202,7 +201,7 @@ public class MainActivity extends AppCompatActivity  {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode) {
-            case (REQUEST_TAKE_PHOTO):
+            case (Constants.REQUEST_TAKE_PHOTO):
                 takepicture(resultCode);
                 break;
         }
